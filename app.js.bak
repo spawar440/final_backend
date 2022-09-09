@@ -17,8 +17,15 @@ var app=express();
 
 const mongoose = require('mongoose')
 
+// mongoose.connect('mongodb+srv://SagarP:root@cluster0.z0ild.mongodb.net/zomato',
+// ()=>{
+//     console.log("Mongodb Connected")
+// },
+// e=>console.log(e))
 
 const DBCONNECTIONSTRING=process.env.DB_URL;
+// "mongodb://localhost/zomato";
+
 
 
 mongoose.connect(
