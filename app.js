@@ -8,7 +8,7 @@ const bodyparser = require('body-parser')
 const cors=require('cors')
 require('dotenv').config();
 
-
+const DBCONNECTIONSTRING=process.env.DB_URL;
 
 //create express server
 var app=express();
