@@ -9,7 +9,7 @@ const routepayment=require('./routes/routepayments')
 const PORT=process.env.PORT || 8083;
 const bodyparser = require('body-parser')
 const cors=require('cors')
-
+require('dotenv').config();
 
 
 //create express server
