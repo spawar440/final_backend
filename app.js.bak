@@ -12,13 +12,11 @@ const cors=require('cors')
 require('dotenv').config();
 
 
+
 //create express server
 var app=express();
 
 const mongoose = require('mongoose')
-
-
-const DBCONNECTIONSTRING=process.env.DB_URL;
 
 
 mongoose.connect(
@@ -30,22 +28,17 @@ mongoose.connect(
 )
 
 
-//add middleware before routes
-app.use(bodyparser.json())
-app.use(cors())
+const PORT=process.env.PORT || 8083;
+
+var app=express()
 
 //middleware routes 
 app.use('/restaurants',slashRoutes)
 app.use('/location',locationRoutes)
 app.use('/mealtype',mealRoutes)
 app.use('/menu',menuRoutes)
-// app.use('/pay',paymentRoute)
 app.use('/pay',routepayment)
-// app.use(app.router);
-// routes.initialize(app);
-if(process.env.NODE_ENV="production"){
-    app.use(express.static("frontendc/build"))
-}
+
 app.listen(PORT,()=>{
 console.log(`app running on Port ${PORT}`)
 })
